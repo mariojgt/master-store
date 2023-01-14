@@ -1,0 +1,38 @@
+{
+    "name": "mariojgt/master-store",
+    "description": "A Laravel Package MasterStore, a quick start for new laravel Packages",
+    "keywords": [
+        "laravel"
+    ],
+    "type": "laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mario",
+            "email": "mariojgt2@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "mariojgt/skeleton-admin": "^1.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mariojgt\\MasterStore\\": "src"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php artisan route:list"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mariojgt\\MasterStore\\MasterStoreProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
