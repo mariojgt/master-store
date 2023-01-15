@@ -4,6 +4,7 @@ namespace Mariojgt\MasterStore\Controllers;
 
 use Inertia\Inertia;
 use Mariojgt\MasterStore\Models\Brand;
+use Mariojgt\MasterStore\Models\Category;
 use Mariojgt\MasterStore\Models\Product;
 use App\Http\Controllers\Controller;
 
@@ -104,6 +105,29 @@ class ProductController extends Controller
                 ],
                 'model'        => encrypt(Brand::class),
                 'singleSearch' => true,
+            ],
+            [
+                'label'     => 'Category',
+                'key'       => 'category_id',
+                'relation'  => 'category',
+                'sortable'  => false,
+                'canCreate' => true,
+                'canEdit'   => true,
+                'nullable'  => true,
+                'type'      => 'pivot_model',
+                'endpoint'  => route('admin.api.generic.table'),
+                'columns'   => [
+                    [
+                        'key'       => 'id',
+                        'sortable'  => false
+                    ],
+                    [
+                        'key'       => 'name',
+                        'sortable'  => true,
+                    ],
+                ],
+                'model'        => encrypt(Category::class),
+                'singleSearch' => false,
             ],
             [
                 'label'     => 'Image',
