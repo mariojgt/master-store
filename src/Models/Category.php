@@ -2,11 +2,10 @@
 
 namespace Mariojgt\MasterStore\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Mariojgt\Magnifier\Models\ModelMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Brand extends BaseMasterModel
+class Category extends BaseMasterModel
 {
     use HasFactory;
 }

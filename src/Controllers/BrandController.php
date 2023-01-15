@@ -6,8 +6,6 @@ use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Mariojgt\MasterStore\Models\Brand;
-use Mariojgt\SkeletonAdmin\Models\Navigation;
-use Mariojgt\SkeletonAdmin\Resource\Common\NavigationResource;
 
 class BrandController extends Controller
 {
@@ -61,11 +59,12 @@ class BrandController extends Controller
             [
                 'label'     => 'Image',
                 'key'       => 'image',
-                'sortable'  => true,
+                'sortable'  => false,
                 'canCreate' => true,
                 'canEdit'   => true,
                 'nullable'  => true,
-                'type'      => 'text',
+                'type'      => 'media',
+                'endpoint'  => route('admin.api.media.search'),
             ]
         ];
 
@@ -96,38 +95,6 @@ class BrandController extends Controller
                     'index'  => 'read-permission',
                 ],
             ]),
-        ]);
-    }
-
-    /**
-     * This function will allow us to manage the naviation menu drag and drop
-     *
-     * @param Request $request
-     *
-     * @return [type]
-     */
-    public function position(Request $request)
-    {
-        // Return the navigation resource order by the sort order
-        $navigation = NavigationResource::collection(Navigation::whereNull('parent_id')->orderBy('sort_order', 'desc')->get());
-
-        // Build the breadcrumb
-        $breadcrumb = [
-            [
-                'label' => 'Navigations',
-                'url'   => route('admin.navigation.index'),
-            ],
-            [
-                'label' => 'Position',
-                'url'   => route('admin.navigation.position'),
-            ],
-        ];
-
-        // Return the view
-        return Inertia::render('BackEnd/Navigation/PositionManage', [
-            'title'      => 'Navigations | Position Management',
-            'breadcrumb' => $breadcrumb,
-            'navigation' => $navigation,
         ]);
     }
 }

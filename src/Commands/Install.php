@@ -40,13 +40,13 @@ class Install extends Command
     public function handle()
     {
         // Call migrations
-        // Artisan::call('install:skeleton-admin');
+        Artisan::call('install:skeleton-admin');
 
-        // // Publish the media library package
-        // Artisan::call('vendor:publish', [
-        //     '--provider' => 'Mariojgt\MasterStore\MasterStoreProvider',
-        //     '--force'    => true,
-        // ]);
+        // Publish the media library package
+        Artisan::call('vendor:publish', [
+            '--provider' => 'Mariojgt\MasterStore\MasterStoreProvider',
+            '--force'    => true,
+        ]);
 
         // Run the database seeder
         Artisan::call('db:seed', [
