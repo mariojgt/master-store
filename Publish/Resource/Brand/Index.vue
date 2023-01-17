@@ -14,9 +14,6 @@
 </template>
 
 <script setup>
-import { Inertia } from "@inertiajs/inertia";
-import { onMounted } from "vue";
-import { Link } from "@inertiajs/inertia-vue3";
 // Import the layout component using the root
 import Layout from "../../../../../Layout/App.vue";
 
