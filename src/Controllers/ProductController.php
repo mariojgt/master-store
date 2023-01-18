@@ -39,6 +39,7 @@ class ProductController extends Controller
                 'canCreate' => true,          // Can be use in the create form
                 'canEdit'   => true,           // Can be use in the edit form
                 'type'      => 'text',         // Type text,email,password,date,timestamp
+                'section'   => 'Product Info', // Section name
             ],
             [
                 'label'     => 'Description',
@@ -47,6 +48,7 @@ class ProductController extends Controller
                 'canCreate' => true,
                 'canEdit'   => true,
                 'type'      => 'text',
+                'section'   => 'Product Description', // Section name
             ],
             [
                 'label'     => 'Slug',
@@ -56,6 +58,7 @@ class ProductController extends Controller
                 'canEdit'   => true,
                 'type'      => 'slug',
                 'unique'    => true,
+                'section'   => 'Product Description', // Section name
             ],
             [
                 'label'     => 'Price',
