@@ -48,7 +48,7 @@ class ProductController extends Controller
                 'canCreate' => true,
                 'canEdit'   => true,
                 'type'      => 'text',
-                'section'   => 'Product Description', // Section name
+                'section'   => 'Product Info', // Section name
             ],
             [
                 'label'     => 'Slug',
@@ -58,7 +58,7 @@ class ProductController extends Controller
                 'canEdit'   => true,
                 'type'      => 'slug',
                 'unique'    => true,
-                'section'   => 'Product Description', // Section name
+                'section'   => 'Product Info', // Section name
             ],
             [
                 'label'     => 'Price',
@@ -68,6 +68,7 @@ class ProductController extends Controller
                 'canEdit'   => true,
                 'nullable'  => true,
                 'type'      => 'number',
+                'section'   => 'Product Settings', // Section name
             ],
             [
                 'label'     => 'Sale Price',
@@ -77,6 +78,7 @@ class ProductController extends Controller
                 'canEdit'   => true,
                 'nullable'  => true,
                 'type'      => 'number',
+                'section'   => 'Product Settings', // Section name
             ],
             [
                 'label'     => 'Stock',
@@ -86,6 +88,7 @@ class ProductController extends Controller
                 'canEdit'   => true,
                 'nullable'  => true,
                 'type'      => 'number',
+                'section'   => 'Product Settings', // Section name
             ],
             [
                 'label'     => 'Brand',
